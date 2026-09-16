@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter number of processes: ";
+    cin >> n;
+
+    int bt[n], ct[n], tat[n], wt[n];
+
+    // Input Burst Time
+    cout << "Enter Burst Time for each process:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "P" << i + 1 << ": ";
+        cin >> bt[i];
+    }
+
+    // FCFS Calculation
+    ct[0] = bt[0];
+
+    for (int i = 1; i < n; i++) {
+        ct[i] = ct[i - 1] + bt[i];
+    }
+
+    // Calculate TAT and WT
+    for (int i = 0; i < n; i++) {
+        tat[i] = ct[i];       // AT = 0
+        wt[i] = tat[i] - bt[i];
+    }
+
+    // Display results
+    cout << "\nProcess\tBT\tCT\tTAT\tWT\n";
+
+    float totalWT = 0, totalTAT = 0;
+
+    for (int i = 0; i < n; i++) {
+        cout << "P" << i + 1 << "\t"
+             << bt[i] << "\t"
+             << ct[i] << "\t"
+             << tat[i] << "\t"
+             << wt[i] << endl;
+
+        totalWT += wt[i];
+        totalTAT += tat[i];
+    }
+
+    cout << "\nAverage Waiting Time = "
+         << totalWT / n;
+
+    cout << "\nAverage Turnaround Time = "
+         << totalTAT / n;
+
+    return 0;
+}
