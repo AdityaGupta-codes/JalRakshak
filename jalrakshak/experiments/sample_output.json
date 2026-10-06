@@ -1,0 +1,86 @@
+{
+  "algorithm": "fcfs",
+  "allocations": [
+    {
+      "request_id": 1,
+      "allocated_litres": 20000,
+      "start_time": 0,
+      "finish_time": 40,
+      "wait_time": 0,
+      "score": null,
+      "status": "approved"
+    },
+    {
+      "request_id": 2,
+      "allocated_litres": 12000,
+      "start_time": 40,
+      "finish_time": 64,
+      "wait_time": 35,
+      "score": null,
+      "status": "approved"
+    },
+    {
+      "request_id": 3,
+      "allocated_litres": 10000,
+      "start_time": 64,
+      "finish_time": 84,
+      "wait_time": 54,
+      "score": null,
+      "status": "approved"
+    },
+    {
+      "request_id": 4,
+      "allocated_litres": 8000,
+      "start_time": 84,
+      "finish_time": 100,
+      "wait_time": 72,
+      "score": null,
+      "status": "approved"
+    },
+    {
+      "request_id": 5,
+      "allocated_litres": 0,
+      "start_time": null,
+      "finish_time": null,
+      "wait_time": null,
+      "score": null,
+      "status": "rejected"
+    },
+    {
+      "request_id": 6,
+      "allocated_litres": 0,
+      "start_time": null,
+      "finish_time": null,
+      "wait_time": null,
+      "score": null,
+      "status": "rejected"
+    },
+    {
+      "request_id": 7,
+      "allocated_litres": 0,
+      "start_time": null,
+      "finish_time": null,
+      "wait_time": null,
+      "score": null,
+      "status": "rejected"
+    },
+    {
+      "request_id": 8,
+      "allocated_litres": 0,
+      "start_time": null,
+      "finish_time": null,
+      "wait_time": null,
+      "score": null,
+      "status": "rejected"
+    }
+  ],
+  "remaining_litres": 0,
+  "metrics": {
+    "avg_wait_time": 40.25,
+    "utilization": 1,
+    "satisfaction_ratio": 0.625,
+    "priority_weighted_satisfaction": 0.5417,
+    "jain_fairness": 0.5,
+    "unserved_count": 4
+  }
+}
