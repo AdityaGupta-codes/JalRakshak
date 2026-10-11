@@ -7,9 +7,9 @@ Every number in this draft comes from the code in this folder and can be reprodu
 
 | | |
 |---|---|
-| Team members | _name, roll number_ × 4 |
-| Guide | _name_ |
-| Department / Institute | _name_ |
+| Team members | Aditya Gupta , Ritesh Chaudhary, Rashi,Ritesh Rawat |
+| Guide | Dr.Parmod Mehra |
+| Department / Institute | B.Tech CSE / GRAPHIC ERA DEEMED TO BE UNIVERSITY |
 | Academic year | 2026–27 |
 
 ---
