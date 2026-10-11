@@ -1,0 +1,16 @@
+{
+  "name": "jalrakshak-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "React dashboard for JalRakshak. The built files are already in public/, so you only need Node to change the source.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

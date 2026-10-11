@@ -1,0 +1,61 @@
+{
+  "forecast_models": [
+    {
+      "model_name": "seasonal_naive",
+      "label": "Same weekday last week (baseline)",
+      "mae_litres": 1848.52,
+      "rmse_litres": 3009.13,
+      "mape": 0.075,
+      "test_days": 90,
+      "is_selected": false
+    },
+    {
+      "model_name": "moving_average",
+      "label": "7-day average (baseline)",
+      "mae_litres": 1735.4,
+      "rmse_litres": 2368.85,
+      "mape": 0.0776,
+      "test_days": 90,
+      "is_selected": false
+    },
+    {
+      "model_name": "linear_regression",
+      "label": "Linear regression",
+      "mae_litres": 1461.34,
+      "rmse_litres": 1946.15,
+      "mape": 0.0608,
+      "test_days": 90,
+      "is_selected": false
+    },
+    {
+      "model_name": "random_forest",
+      "label": "Random forest",
+      "mae_litres": 1223.05,
+      "rmse_litres": 1605.52,
+      "mape": 0.0512,
+      "test_days": 90,
+      "is_selected": true
+    }
+  ],
+  "leak_detectors": {
+    "robust_zscore": {
+      "true_positives": 61,
+      "false_positives": 8,
+      "missed": 31,
+      "precision": 0.8841,
+      "recall": 0.663,
+      "f1": 0.7578
+    },
+    "isolation_forest": {
+      "true_positives": 40,
+      "false_positives": 0,
+      "missed": 52,
+      "precision": 1.0,
+      "recall": 0.4348,
+      "f1": 0.6061
+    }
+  },
+  "selected_model": "random_forest",
+  "history_days": 730,
+  "injected_leak_days": 92
+}

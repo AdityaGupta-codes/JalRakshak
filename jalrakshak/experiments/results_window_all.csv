@@ -1,0 +1,13 @@
+scenario,algorithm,trials,avg_wait_time,utilization,satisfaction_ratio,priority_weighted_satisfaction,jain_fairness,unserved_count,deadline_miss_count
+normal,fcfs,200,111.3381,0.8333,1,1,1,0,3.87
+normal,priority,200,113.2057,0.8333,1,1,1,0,3.66
+normal,round_robin,200,48.1662,0.8333,1,1,1,0,4.535
+normal,water_aware,200,110.6882,0.8333,1,1,1,0,3.28
+moderate_scarcity,fcfs,200,96.9959,0.9982,0.7487,0.7432,0.7652,2.14,2.815
+moderate_scarcity,priority,200,88.6602,0.9997,0.7497,0.8475,0.7197,2.595,2.365
+moderate_scarcity,round_robin,200,48.1662,1,0.75,0.8461,0.9494,0,4.275
+moderate_scarcity,water_aware,200,102.018,1,0.75,0.8676,0.8629,0,3.055
+severe_scarcity,fcfs,200,80.3841,0.9985,0.4992,0.5005,0.5161,4.635,1.6
+severe_scarcity,priority,200,70.8264,0.9995,0.4997,0.6808,0.5238,4.54,1.305
+severe_scarcity,round_robin,200,48.1662,1,0.5,0.6019,0.8573,0,3.15
+severe_scarcity,water_aware,200,81.2883,1,0.5,0.6247,0.7412,0,2.25

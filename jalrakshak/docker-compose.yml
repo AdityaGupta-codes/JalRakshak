@@ -1,0 +1,62 @@
+services:
+  db:
+    # postgres:16 with schema.sql, seed.sql and migrate.sql built in (db/Dockerfile). They run once, when the
+    # data volume is empty. An existing database is upgraded by the backend at start-up instead.
+    build:
+      context: ./db
+    environment:
+      POSTGRES_PASSWORD: jal123
+      POSTGRES_DB: jalrakshak
+    ports:
+      # Host port 5433 (not 5432) so it never clashes with a PostgreSQL installed on Windows.
+      # Inside Docker the other services still use db:5432. Change with DB_PORT in a .env file.
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # -h 127.0.0.1 (TCP): while the init scripts run, Postgres only listens on its local socket, so this
+      # check only passes once the schema and seed data are fully loaded.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U postgres -d jalrakshak"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:jal123@db:5432/jalrakshak
+      # "all" = rank every pending request together (default); a number = wait that many minutes
+      BATCH_WINDOW_MINUTES: ${BATCH_WINDOW_MINUTES:-all}
+      # Set a value (e.g. in a .env file next to this one) to require a token for changes. Empty = open.
+      JAL_ADMIN_TOKEN: ${JAL_ADMIN_TOKEN:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Data science pipeline: fills consumption history, forecasts, model scores and leak alerts, then exits.
+  # Run it again any time with:  docker compose run --rm ml
+  ml:
+    build:
+      context: .
+      dockerfile: ml/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:jal123@db:5432/jalrakshak
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
