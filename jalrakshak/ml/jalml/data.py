@@ -25,8 +25,6 @@ import pandas as pd
 LITRES_PER_PERSON = 0.55
 TREND_PER_YEAR = 0.04
 NOISE_SD = 0.045
-
-# Monthly multipliers, January..December (Indian climate: summer peak, monsoon dip)
 SEASON = np.array([0.92, 0.95, 1.03, 1.14, 1.22, 1.18, 0.95, 0.90, 0.93, 0.98, 0.96, 0.93])
 
 
