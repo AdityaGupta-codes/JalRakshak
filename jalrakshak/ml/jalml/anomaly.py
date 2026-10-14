@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 
-K = 3.0            # robust standard deviations above normal that count as abnormal (tuned on seed 7, see README)
-MIN_EXCESS = 0.15  # never flag less than 15 % above normal (ordinary noise and heat waves)
+K = 3.0            
+MIN_EXCESS = 0.15  
 
 
 def _per_zone(df):
