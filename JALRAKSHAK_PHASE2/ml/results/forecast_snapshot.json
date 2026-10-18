@@ -1,0 +1,1095 @@
+{
+ "zones": [
+  {
+   "zone_id": 1,
+   "name": "North Zone",
+   "population": 40000
+  },
+  {
+   "zone_id": 2,
+   "name": "Central Zone",
+   "population": 65000
+  },
+  {
+   "zone_id": 3,
+   "name": "South Zone",
+   "population": 30000
+  }
+ ],
+ "history": [
+  {
+   "zone_id": 1,
+   "date": "2026-08-12",
+   "litres": 22109.48
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-13",
+   "litres": 20239.39
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-14",
+   "litres": 29016.93
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-15",
+   "litres": 28435.85
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-16",
+   "litres": 28997.36
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-17",
+   "litres": 23551.67
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-18",
+   "litres": 20831.52
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-19",
+   "litres": 20131.61
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-20",
+   "litres": 21602.75
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-21",
+   "litres": 29974.41
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-22",
+   "litres": 31437.93
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-23",
+   "litres": 30526.3
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-24",
+   "litres": 20784.25
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-25",
+   "litres": 21266.63
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-26",
+   "litres": 29524.52
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-27",
+   "litres": 31969.51
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-28",
+   "litres": 32134.13
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-29",
+   "litres": 22661.27
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-30",
+   "litres": 22314.44
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-08-31",
+   "litres": 21567.73
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-01",
+   "litres": 21379.82
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-02",
+   "litres": 22627.88
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-03",
+   "litres": 23966.82
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-04",
+   "litres": 23557.25
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-05",
+   "litres": 23872.58
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-06",
+   "litres": 24773.22
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-07",
+   "litres": 21224.79
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-08",
+   "litres": 20833.91
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-09",
+   "litres": 20974.75
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-10",
+   "litres": 21999.11
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-11",
+   "litres": 23490.16
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-12",
+   "litres": 22160.99
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-13",
+   "litres": 24073.63
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-14",
+   "litres": 20383.5
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-15",
+   "litres": 20415.57
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-16",
+   "litres": 22662.45
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-17",
+   "litres": 21148.18
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-18",
+   "litres": 21335.5
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-19",
+   "litres": 24967.68
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-20",
+   "litres": 23666.39
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-21",
+   "litres": 21567.66
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-22",
+   "litres": 21389.8
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-23",
+   "litres": 22244.0
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-24",
+   "litres": 21142.5
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-25",
+   "litres": 22117.83
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-26",
+   "litres": 24067.78
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-27",
+   "litres": 23269.32
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-28",
+   "litres": 19311.25
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-29",
+   "litres": 20991.08
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-09-30",
+   "litres": 22606.68
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-01",
+   "litres": 24190.13
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-02",
+   "litres": 23644.15
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-03",
+   "litres": 25750.77
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-04",
+   "litres": 23732.28
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-05",
+   "litres": 24117.63
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-06",
+   "litres": 23022.82
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-07",
+   "litres": 23743.52
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-08",
+   "litres": 20078.62
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-09",
+   "litres": 24215.04
+  },
+  {
+   "zone_id": 1,
+   "date": "2026-10-10",
+   "litres": 24467.57
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-12",
+   "litres": 35179.03
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-13",
+   "litres": 34149.21
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-14",
+   "litres": 35412.96
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-15",
+   "litres": 35032.78
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-16",
+   "litres": 30929.72
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-17",
+   "litres": 34029.88
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-18",
+   "litres": 33511.26
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-19",
+   "litres": 36895.81
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-20",
+   "litres": 33797.21
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-21",
+   "litres": 36461.88
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-22",
+   "litres": 31855.03
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-23",
+   "litres": 28641.14
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-24",
+   "litres": 34244.95
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-25",
+   "litres": 35509.53
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-26",
+   "litres": 49704.11
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-27",
+   "litres": 49094.13
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-28",
+   "litres": 36009.07
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-29",
+   "litres": 29981.7
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-30",
+   "litres": 32398.88
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-08-31",
+   "litres": 32819.83
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-01",
+   "litres": 35195.74
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-02",
+   "litres": 39269.67
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-03",
+   "litres": 37989.11
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-04",
+   "litres": 34925.62
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-05",
+   "litres": 34388.28
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-06",
+   "litres": 33962.34
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-07",
+   "litres": 36129.16
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-08",
+   "litres": 36021.58
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-09",
+   "litres": 34541.23
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-10",
+   "litres": 37265.31
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-11",
+   "litres": 37855.4
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-12",
+   "litres": 33711.9
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-13",
+   "litres": 29833.16
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-14",
+   "litres": 39367.38
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-15",
+   "litres": 35260.66
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-16",
+   "litres": 37099.52
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-17",
+   "litres": 35019.29
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-18",
+   "litres": 35549.5
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-19",
+   "litres": 36509.68
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-20",
+   "litres": 32394.84
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-21",
+   "litres": 37706.05
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-22",
+   "litres": 37749.31
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-23",
+   "litres": 35607.8
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-24",
+   "litres": 36937.46
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-25",
+   "litres": 38100.23
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-26",
+   "litres": 36993.75
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-27",
+   "litres": 32499.67
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-28",
+   "litres": 36492.23
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-29",
+   "litres": 34939.86
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-09-30",
+   "litres": 37770.46
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-01",
+   "litres": 38628.75
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-02",
+   "litres": 36507.82
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-03",
+   "litres": 36375.48
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-04",
+   "litres": 34519.79
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-05",
+   "litres": 37456.77
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-06",
+   "litres": 37235.8
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-07",
+   "litres": 51704.63
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-08",
+   "litres": 56059.16
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-09",
+   "litres": 55292.92
+  },
+  {
+   "zone_id": 2,
+   "date": "2026-10-10",
+   "litres": 38516.32
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-12",
+   "litres": 16173.3
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-13",
+   "litres": 17468.95
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-14",
+   "litres": 16096.7
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-15",
+   "litres": 14261.14
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-16",
+   "litres": 13367.74
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-17",
+   "litres": 15878.2
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-18",
+   "litres": 16613.03
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-19",
+   "litres": 16913.18
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-20",
+   "litres": 17294.49
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-21",
+   "litres": 16583.84
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-22",
+   "litres": 16183.38
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-23",
+   "litres": 14193.99
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-24",
+   "litres": 15240.93
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-25",
+   "litres": 17008.97
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-26",
+   "litres": 17342.72
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-27",
+   "litres": 17183.13
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-28",
+   "litres": 17813.78
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-29",
+   "litres": 12521.18
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-30",
+   "litres": 12461.89
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-08-31",
+   "litres": 18104.58
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-01",
+   "litres": 18452.18
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-02",
+   "litres": 19296.99
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-03",
+   "litres": 18802.36
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-04",
+   "litres": 16334.44
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-05",
+   "litres": 15552.93
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-06",
+   "litres": 13368.96
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-07",
+   "litres": 17670.8
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-08",
+   "litres": 17552.29
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-09",
+   "litres": 17142.18
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-10",
+   "litres": 17114.97
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-11",
+   "litres": 17953.27
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-12",
+   "litres": 14507.19
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-13",
+   "litres": 13682.44
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-14",
+   "litres": 17901.3
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-15",
+   "litres": 17100.16
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-16",
+   "litres": 17297.37
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-17",
+   "litres": 18431.87
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-18",
+   "litres": 16032.61
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-19",
+   "litres": 14431.57
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-20",
+   "litres": 12743.77
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-21",
+   "litres": 17702.53
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-22",
+   "litres": 19666.4
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-23",
+   "litres": 16565.26
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-24",
+   "litres": 18504.72
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-25",
+   "litres": 18483.41
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-26",
+   "litres": 13459.88
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-27",
+   "litres": 12750.63
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-28",
+   "litres": 17527.08
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-29",
+   "litres": 16765.84
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-09-30",
+   "litres": 17766.98
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-01",
+   "litres": 19629.56
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-02",
+   "litres": 18900.83
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-03",
+   "litres": 15565.42
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-04",
+   "litres": 14675.32
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-05",
+   "litres": 18793.04
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-06",
+   "litres": 17446.87
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-07",
+   "litres": 18002.58
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-08",
+   "litres": 18895.37
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-09",
+   "litres": 18276.56
+  },
+  {
+   "zone_id": 3,
+   "date": "2026-10-10",
+   "litres": 15943.7
+  }
+ ],
+ "predictions": [
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-11",
+   "predicted_litres": 23817.77,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-11",
+   "predicted_litres": 34734.12,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-11",
+   "predicted_litres": 14612.57,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-12",
+   "predicted_litres": 22245.81,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-12",
+   "predicted_litres": 36795.1,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-12",
+   "predicted_litres": 18150.36,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-13",
+   "predicted_litres": 22211.02,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-13",
+   "predicted_litres": 36603.16,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-13",
+   "predicted_litres": 17861.47,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-14",
+   "predicted_litres": 22580.43,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-14",
+   "predicted_litres": 37345.02,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-14",
+   "predicted_litres": 18018.26,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-15",
+   "predicted_litres": 22814.5,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-15",
+   "predicted_litres": 36943.12,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-15",
+   "predicted_litres": 18379.01,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-16",
+   "predicted_litres": 23152.35,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-16",
+   "predicted_litres": 36758.37,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-16",
+   "predicted_litres": 18076.02,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 1,
+   "target_date": "2026-10-17",
+   "predicted_litres": 23609.25,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 2,
+   "target_date": "2026-10-17",
+   "predicted_litres": 36324.01,
+   "model_name": "random_forest"
+  },
+  {
+   "zone_id": 3,
+   "target_date": "2026-10-17",
+   "predicted_litres": 16561.11,
+   "model_name": "random_forest"
+  }
+ ],
+ "models": [
+  {
+   "model_name": "seasonal_naive",
+   "label": "Same weekday last week (baseline)",
+   "mae_litres": 1848.52,
+   "rmse_litres": 3009.13,
+   "mape": 0.075,
+   "test_days": 90,
+   "is_selected": false
+  },
+  {
+   "model_name": "moving_average",
+   "label": "7-day average (baseline)",
+   "mae_litres": 1735.4,
+   "rmse_litres": 2368.85,
+   "mape": 0.0776,
+   "test_days": 90,
+   "is_selected": false
+  },
+  {
+   "model_name": "linear_regression",
+   "label": "Linear regression",
+   "mae_litres": 1461.34,
+   "rmse_litres": 1946.15,
+   "mape": 0.0608,
+   "test_days": 90,
+   "is_selected": false
+  },
+  {
+   "model_name": "random_forest",
+   "label": "Random forest",
+   "mae_litres": 1223.05,
+   "rmse_litres": 1605.52,
+   "mape": 0.0512,
+   "test_days": 90,
+   "is_selected": true
+  }
+ ],
+ "alerts": [
+  {
+   "zone_id": 2,
+   "alert_type": "anomaly",
+   "severity": "critical",
+   "message": "Possible leak in Central Zone: use was up to 51% above normal on 07 Oct to 09 Oct (about 52,420 L extra). Check pipes and meters."
+  }
+ ]
+}

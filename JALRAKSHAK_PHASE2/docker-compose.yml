@@ -1,0 +1,125 @@
+services:
+  db:
+    # postgres:16 with schema.sql, seed.sql and migrate.sql built in (db/Dockerfile). They run once, when the
+    # data volume is empty. An existing database is upgraded by the backend at start-up instead.
+    build:
+      context: ./db
+    environment:
+      POSTGRES_PASSWORD: jal123
+      POSTGRES_DB: jalrakshak
+    ports:
+      # Host port 5433 (not 5432) so it never clashes with a PostgreSQL installed on Windows.
+      # Inside Docker the other services still use db:5432. Change with DB_PORT in a .env file.
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      # -h 127.0.0.1 (TCP): while the init scripts run, Postgres only listens on its local socket, so this
+      # check only passes once the schema and seed data are fully loaded.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U postgres -d jalrakshak"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:jal123@db:5432/jalrakshak
+      # "all" = rank every pending request together (default); a number = wait that many minutes
+      BATCH_WINDOW_MINUTES: ${BATCH_WINDOW_MINUTES:-all}
+      # Sign-in (see .env.example). The first administrator is created on first start.
+      JAL_ADMIN_EMAIL: ${JAL_ADMIN_EMAIL:-admin@jalrakshak.local}
+      JAL_ADMIN_PASSWORD: ${JAL_ADMIN_PASSWORD:-Admin@1234}
+      FORCE_ADMIN_PASSWORD_CHANGE: ${FORCE_ADMIN_PASSWORD_CHANGE:-1}
+      JAL_DEMO_ACCOUNTS: ${JAL_DEMO_ACCOUNTS:-1}
+      JAL_DEMO_PASSWORD: ${JAL_DEMO_PASSWORD:-Demo@1234}
+      SESSION_HOURS: ${SESSION_HOURS:-12}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      # v2.0 governance / security / privacy (see .env.example)
+      REQUIRE_SECOND_APPROVER: ${REQUIRE_SECOND_APPROVER:-1}
+      REQUIRE_ADMIN_MFA: ${REQUIRE_ADMIN_MFA:-0}
+      # least-privilege login for the running API (created by the backend with the owner login above)
+      APP_DB_USER: ${APP_DB_USER:-jal_app}
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:-jal_app_change_me}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      PRIVACY_CONTACT: ${PRIVACY_CONTACT:-the grievance officer of the water department}
+      RATE_LIMIT_AUTH_PER_MINUTE: ${RATE_LIMIT_AUTH_PER_MINUTE:-20}
+      BACKUP_DIR: /backups
+    ports:
+      - "8000:8000"
+    volumes:
+      - backups:/backups:ro          # read-only: the Operations page lists the backups
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Data science pipeline: fills consumption history, forecasts, model scores and leak alerts, then exits.
+  # Run it again any time with:  docker compose run --rm ml
+  ml:
+    build:
+      context: .
+      dockerfile: ml/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:jal123@db:5432/jalrakshak
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      # the API address the browser may call (Content-Security-Policy connect-src)
+      API_ORIGIN: ${API_ORIGIN:-http://localhost:8000}
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  # Database backup every BACKUP_INTERVAL_HOURS (default 24), kept BACKUP_KEEP_DAYS (default 14).
+  # List:   docker compose exec backup ls -lh /backups
+  # Copy to this PC:   docker compose cp backup:/backups ./backups
+  # Restore:   .\scripts\restore.ps1 <file>
+  backup:
+    build:
+      context: ./backup
+    environment:
+      PGPASSWORD: jal123
+      BACKUP_INTERVAL_HOURS: ${BACKUP_INTERVAL_HOURS:-24}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-14}
+    volumes:
+      - backups:/backups
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # HTTPS for the whole site (optional):   docker compose --profile https up --build
+  # then open https://localhost  (the web app and the API, under /api, on one secure address)
+  proxy:
+    build:
+      context: ./proxy
+    profiles: ["https"]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-localhost}
+      TLS_MODE: ${TLS_MODE:-internal}
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - caddy_data:/data
+    restart: unless-stopped
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  pgdata:
+  backups:
+  caddy_data:

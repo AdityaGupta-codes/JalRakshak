@@ -1,0 +1,27 @@
+# HTTPS front door (docker compose --profile https up). One address serves the web app and, under /api,
+# the API, so the browser talks to a single origin over TLS.
+#   SITE_ADDRESS=localhost  -> Caddy's own local certificate authority ("tls internal"); the browser warns
+#                              once unless you trust Caddy's root certificate.
+#   SITE_ADDRESS=water.example.gov.in and TLS_MODE=<admin email> -> a public certificate (Let's Encrypt).
+{$SITE_ADDRESS:localhost} {
+    tls {$TLS_MODE:internal}
+    encode gzip
+
+    handle_path /api/* {
+        reverse_proxy backend:8000 {
+            header_up X-Forwarded-Proto https
+        }
+    }
+    handle /config.js {
+        header Content-Type "application/javascript"
+        header Cache-Control "no-store"
+        respond `window.JAL_CONFIG = { apiBase: "/api" };`
+    }
+    handle {
+        reverse_proxy frontend:80
+    }
+    header {
+        Strict-Transport-Security "max-age=31536000"
+        -Server
+    }
+}
