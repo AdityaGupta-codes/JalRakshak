@@ -1,0 +1,7 @@
+flowchart LR
+    U["Operator<br/>(browser)"] -->|HTTP| FE["React dashboard<br/>nginx :3000"]
+    FE -->|JSON REST| API["FastAPI backend<br/>:8000"]
+    API -->|"stdin JSON → stdout JSON<br/>(subprocess)"| S["C++ scheduler<br/>FCFS · Priority · Round robin · Water-aware"]
+    API -->|"SQL, one transaction,<br/>SELECT … FOR UPDATE"| DB[("PostgreSQL 16<br/>requests · runs · allocations<br/>consumption · predictions · alerts")]
+    ML["Data-science pipeline<br/>(Python, scikit-learn)"] -->|"history, forecasts,<br/>model scores, leak alerts"| DB
+    DB -->|"today's forecast =<br/>predicted demand"| API

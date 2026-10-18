@@ -1,0 +1,145 @@
+erDiagram
+    zones ||--o{ users : "has"
+    zones ||--o{ consumption : "daily use"
+    zones ||--o{ predictions : "forecast for"
+    zones |o--o{ alerts : "about"
+    users ||--o{ water_requests : "makes"
+    reservoirs ||--o{ water_requests : "asked from"
+    reservoirs |o--o{ scheduler_runs : "planned for"
+    scheduler_runs ||--o{ allocations : "contains"
+    water_requests ||--o{ allocations : "receives"
+    reservoirs ||--o{ allocations : "drawn from"
+    model_evaluations ||..o{ predictions : "model_name"
+    users |o--o{ accounts : "signs in for"
+    accounts ||--o{ sessions : "has"
+    accounts ||--o{ notifications : "receives"
+    accounts |o--o{ issues : "reports"
+    accounts |o--o{ audit_log : "did"
+    accounts |o--o{ water_requests : "created"
+
+    zones {
+        int zone_id PK
+        text name UK
+        int population
+    }
+    users {
+        int user_id PK
+        text name
+        text user_type "hospital, domestic, school, industry, commercial, park"
+        smallint priority "1 to 5"
+        int zone_id FK
+    }
+    reservoirs {
+        int reservoir_id PK
+        text name UK
+        numeric capacity_litres
+        numeric available_litres "0 to capacity (CHECK)"
+        timestamptz updated_at
+    }
+    water_requests {
+        int request_id PK
+        int user_id FK
+        int reservoir_id FK
+        numeric requested_litres "> 0"
+        smallint urgency "1 to 5"
+        timestamptz arrival_time
+        timestamptz deadline "> arrival_time"
+        text status "pending, approved, partial, rejected, cancelled"
+        int created_by FK
+        text note
+    }
+    scheduler_runs {
+        int run_id PK
+        text algorithm "fcfs, priority, round_robin, water_aware"
+        text scenario
+        int reservoir_id FK
+        numeric available_before
+        numeric available_after
+        jsonb metrics
+        boolean committed
+        timestamptz created_at
+    }
+    allocations {
+        int allocation_id PK
+        int run_id FK
+        int request_id FK
+        int reservoir_id FK
+        numeric allocated_litres ">= 0"
+        numeric wait_minutes
+        numeric score
+        timestamptz allocated_at
+    }
+    consumption {
+        bigint consumption_id PK
+        int zone_id FK
+        date recorded_on
+        numeric litres
+        boolean is_injected_leak
+    }
+    predictions {
+        int prediction_id PK
+        int zone_id FK
+        date target_date
+        numeric predicted_litres
+        text model_name
+        timestamptz created_at
+    }
+    model_evaluations {
+        int evaluation_id PK
+        text model_name
+        numeric mae_litres
+        numeric rmse_litres
+        numeric mape
+        int test_days
+        boolean is_selected
+        timestamptz created_at
+    }
+    alerts {
+        int alert_id PK
+        int zone_id FK
+        text alert_type "low_water, high_demand, anomaly"
+        text severity "info, warning, critical"
+        text message
+        boolean resolved
+        timestamptz created_at
+    }
+    accounts {
+        int account_id PK
+        text email UK "case-insensitive"
+        text password_hash "pbkdf2_sha256, salted"
+        text full_name
+        text role "admin, requester"
+        text status "pending, active, disabled, rejected"
+        int user_id FK "organisation (requester)"
+        boolean must_change_password
+        int failed_logins
+        timestamptz locked_until
+    }
+    sessions {
+        text token_hash PK "sha256 of the token"
+        int account_id FK
+        timestamptz expires_at
+    }
+    notifications {
+        int notification_id PK
+        int account_id FK
+        text kind "allocation, issue, account"
+        text title
+        boolean is_read
+    }
+    issues {
+        int issue_id PK
+        int account_id FK
+        int user_id FK
+        int zone_id FK
+        text category "leak, no_supply, low_pressure, quality, other"
+        text status "open, in_progress, resolved, closed"
+        text admin_response
+    }
+    audit_log {
+        bigint audit_id PK
+        int account_id FK
+        text action "append-only (trigger)"
+        jsonb details
+        timestamptz created_at
+    }
