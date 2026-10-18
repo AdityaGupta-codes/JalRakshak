@@ -1,0 +1,103 @@
+erDiagram
+    accounts ||--o{ policies : "proposes / decides"
+    policies |o--o{ scheduler_runs : "used by"
+    policies |o--o{ supply_timetables : "used by"
+    accounts |o--o{ scheduler_runs : "applied (created_by)"
+    reservoirs |o--o{ zones : "feeds (reservoir_id)"
+    supply_timetables |o--o{ tanker_trips : "planned from"
+    zones ||--o{ tanker_trips : "receives"
+    reservoirs |o--o{ devices : "level sensor"
+    zones |o--o{ devices : "flow meter"
+    devices ||--o{ readings : "sends"
+    accounts ||--o{ login_challenges : "2nd sign-in step"
+    accounts |o--o{ privacy_requests : "raises / handles"
+    accounts |o--o{ security_incidents : "records"
+
+    policies {
+        int policy_id PK
+        int version UK
+        text status "draft pending approved rejected superseded"
+        jsonb class_priority
+        jsonb class_min_share
+        numeric lpcd "135 by default"
+        numeric zone_min_share
+        numeric tanker_trigger_lpcd
+        int proposed_by FK
+        int decided_by FK
+    }
+    supply_timetables {
+        int timetable_id PK
+        date for_date "one published per day"
+        text status "draft published withdrawn"
+        int policy_id FK
+        jsonb input
+        jsonb result
+    }
+    tanker_trips {
+        int trip_id PK
+        int zone_id FK
+        int timetable_id FK
+        date planned_for
+        numeric litres
+        int loads
+        text status "planned dispatched delivered cancelled"
+    }
+    devices {
+        int device_id PK
+        text name UK
+        text kind "reservoir_level or zone_flow"
+        text key_hash UK "SHA-256 of the key"
+        int reservoir_id FK
+        int zone_id FK
+        timestamptz last_seen_at
+    }
+    readings {
+        bigint reading_id PK
+        int device_id FK
+        timestamptz measured_at "UNIQUE with device_id"
+        numeric value
+    }
+    login_challenges {
+        text token_hash PK
+        int account_id FK
+        timestamptz expires_at
+        int attempts "max 5"
+    }
+    privacy_requests {
+        int request_id PK
+        int account_id FK
+        text kind "erasure correction grievance"
+        text status
+    }
+    security_incidents {
+        int incident_id PK
+        text severity
+        bool personal_data_affected
+        timestamptz detected_at
+        timestamptz reported_cert_in_at
+        timestamptz reported_board_at
+    }
+    zones {
+        int zone_id PK
+        int reservoir_id FK "new"
+        numeric inlet_capacity_lph "new"
+        smallint supply_priority "new"
+        jsonb boundary "new GeoJSON"
+    }
+    reservoirs {
+        int reservoir_id PK
+        numeric daily_release_litres "new"
+        numeric pump_capacity_lph "new"
+    }
+    scheduler_runs {
+        int run_id PK
+        int policy_id FK "new"
+        text override_reason "new"
+        jsonb comparison "new"
+    }
+    accounts {
+        int account_id PK
+        bool mfa_enabled "new"
+        timestamptz consent_at "new"
+        text language "new en or hi"
+    }
